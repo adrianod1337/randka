@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Trattatello, cursive;
+}
+
+body {
+    background: linear-gradient(135deg, #620399, #f366c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#catsweating {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.button_pierwszy {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #ff69b4;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #ff69b4;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button_pierwszy:hover {
+    background-color: #ffe4f7;
+    transform: scale(1.1);
+}
+
+.button_pierwszy:active {
+    background-color: #ffaad4;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+#catflower{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#catflower1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+.photo_gallery{
+    display: flex;
+    text-align: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 1200px;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.photo_gallery #rozciagnij{
+    width: 240px;
+    height: 210px;
+    object-fit: cover;
+}
+
+.maczek, .spacer, .kino, .kregle, .zegar{
+    padding: 15px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.main_jedzenie{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main_jedzenie h1{
+    text-align: c
+}
+
+.main_koniec{
+    display: flex;
+    font-size: 70px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #ff6347, #20b2aa);
+    background-size: 200% 100%;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: waveColor 4s infinite; 
+}
+
+.main_kalendarz{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -10%;
+    width: 40%;
+    text-align: center;
+    
+}
+
+.main_kalendarz input{
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.main_kalendarz button{
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.main_kalendarz h1{
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+
+.data, #confirmDate{
+    border-radius: 8px;
+    border: 1px solid pink;
+    padding: 5px;
+}
+
+#confirmDate{
+    background: rgba(255, 255, 255, 0.623);
+}
+
+
+
+@keyframes waveColor {
+    0% {
+      color: rgb(186, 134, 255);
+      background-position: 100% 0;
+    }
+    50% {
+      color: #ff6464; /* Kolor w połowie animacji, np. pomarańczowy */
+      background-position: 0 0;
+    }
+    100% {
+      color: #ff94ed; /* Końcowy kolor, np. morski */
+      background-position: 100% 0;
+    }
+  }
+  
