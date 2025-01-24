@@ -4,9 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Trattatello, cursive;
+    font-family: 'Edu AU VIC WA NT Pre', cursive;
 }
 
+/* Tło dla body */
 body {
     background: linear-gradient(135deg, #620399, #f366c4);
     height: 100vh;
@@ -15,43 +16,26 @@ body {
     align-items: center;
 }
 
+/* Główna sekcja */
 .main {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 1rem;
 }
 
+/* Tytuł */
 .title {
     font-size: 3rem;
     color: #ff69b4;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-#catsweating {
-    width: 200px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cat-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
+/* Układ dla przycisku */
 .button_pierwszy {
-    padding: 10px 20px;
+    padding: 0.6rem 1.2rem;
     font-size: 1.2rem;
     color: #ff69b4;
     background-color: rgba(255, 255, 255, 0.8);
@@ -70,6 +54,21 @@ body {
     background-color: #ffaad4;
 }
 
+/* Przycisk na zdjęciu */
+#catsweating {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Ukrywanie i pokazywanie elementów */
 .hidden {
     display: none;
 }
@@ -78,42 +77,43 @@ body {
     display: block;
 }
 
-#catflower{
+/* Pozycjonowanie obrazków */
+#catflower, #catflower1 {
     position: absolute;
     bottom: 0;
+}
+
+#catflower {
     right: 0;
 }
-#catflower1{
-    position: absolute;
-    bottom: 0;
+
+#catflower1 {
     left: 0;
 }
 
-
-
-
-.photo_gallery{
+/* Galeria zdjęć */
+.photo_gallery {
     display: flex;
     text-align: center;
-    gap: 50px;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    width: 1200px;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 2rem;
 }
 
-.photo_gallery #rozciagnij{
+.photo_gallery #rozciagnij {
     width: 240px;
     height: 210px;
     object-fit: cover;
 }
 
-.maczek, .spacer, .kino, .kregle, .zegar{
-    padding: 15px;
+.maczek, .spacer, .kino, .kregle, .zegar {
+    padding: 1rem;
     border: 2px solid rgb(255, 255, 255);
 }
 
-.main_jedzenie{
+/* Główna strona wyboru jedzenia */
+.main_jedzenie {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -121,13 +121,11 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.main_jedzenie h1{
-    text-align: c
-}
 
-.main_koniec{
+/* Strona końcowa */
+.main_koniec {
     display: flex;
-    font-size: 70px;
+    font-size: 4rem;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -135,63 +133,108 @@ body {
     background-size: 200% 100%;
     background-clip: text;
     text-fill-color: transparent;
-    animation: waveColor 4s infinite; 
+    animation: waveColor 4s infinite;
 }
 
-.main_kalendarz{
+/* Kalendarz */
+.main_kalendarz {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: -10%;
+    margin: 5rem auto;
     width: 40%;
     text-align: center;
-    
 }
 
-.main_kalendarz input{
-    width: 30%;
+.main_kalendarz input {
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.main_kalendarz button{
-    width: 40%;
+.main_kalendarz button {
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
+    padding: 0.5rem 1rem;
 }
 
-.main_kalendarz h1{
-    margin-top: 200px;
-    margin-bottom: 50px;
+.main_kalendarz h1 {
+    margin-bottom: 1.5rem;
 }
 
-
-.data, #confirmDate{
+/* Formaty danych */
+.data, #confirmDate {
     border-radius: 8px;
     border: 1px solid pink;
-    padding: 5px;
+    padding: 0.5rem;
 }
 
-#confirmDate{
+#confirmDate {
     background: rgba(255, 255, 255, 0.623);
 }
 
-
-
+/* Animacja kolorów */
 @keyframes waveColor {
     0% {
-      color: rgb(186, 134, 255);
-      background-position: 100% 0;
+        color: rgb(186, 134, 255);
+        background-position: 100% 0;
     }
     50% {
-      color: #ff6464; /* Kolor w połowie animacji, np. pomarańczowy */
-      background-position: 0 0;
+        color: #ff6464;
+        background-position: 0 0;
     }
     100% {
-      color: #ff94ed; /* Końcowy kolor, np. morski */
-      background-position: 100% 0;
+        color: #ff94ed;
+        background-position: 100% 0;
     }
-  }
-  
+}
+
+/* Media Queries dla mniejszych ekranów */
+@media (max-width: 768px) {
+    .main_kalendarz {
+        width: 60%;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .main {
+        gap: 1rem;
+    }
+
+    .photo_gallery {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .photo_gallery #rozciagnij {
+        width: 100%;
+    }
+
+    .main_jedzenie {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main_kalendarz {
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .button_pierwszy {
+        padding: 0.4rem 1rem;
+        font-size: 1rem;
+    }
+
+    .main_koniec {
+        font-size: 3rem;
+    }
+}
