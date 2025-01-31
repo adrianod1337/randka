@@ -7,13 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/style_main.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #620399, #f366c4);
+            background-size: 400% 400%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+
+        .photo_gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .photo_gallery > div {
+            background: white;
+            color: #9b59b6;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+        }
+
+        .photo_gallery img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .photo_gallery p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .photo_gallery > div.selected {
+            border: 2px solid pink;
+        }
+        .rozciagnij {
+        width: 250px; /* Obrazy zajmują pełną szerokość kontenera */
+        height: 400px; /* Stała wysokość dla spójności */
+         /* Zachowuje proporcje i wypełnia przestrzeń */
+    }
+    </style>
 </head>
 <body>
     <main class="main_jedzenie">
         <h1>Gdzie idziemy??</h1>
         <div class="photo_gallery">
             <div class="maczek">
-                <img src="../assets/mcd.png" alt="maczek">
+                <img src="../assets/mcd.png" alt="maczek" id="rozciagnij">
                 <p>MACZEK?</p>
             </div>
             <div class="spacer">
@@ -45,16 +105,13 @@
                 div.addEventListener('click', function() {
                     if (isOptionSelected) return;
 
-
                     isOptionSelected = true;
-                    div.style.border = '2px solid pink';
+                    div.classList.add('selected');
                     selectedFood = div.querySelector('p').innerText;
                     
-
                     localStorage.setItem('selectedFood', selectedFood);
 
                     const selectedDate = localStorage.getItem('selectedDate');
-
 
                     if (selectedDate && selectedFood) {
                         const webhookUrl = 'https://discord.com/api/webhooks/1329457507457961984/3Bzz0SF9P5BAok3OF9QhWt3qDjR4-6-q-9KTX-gkHLo_qfZYsVEUciNwsFvsPVm9nONB';

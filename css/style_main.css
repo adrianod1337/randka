@@ -85,10 +85,12 @@ body {
 
 #catflower {
     right: 0;
+    height: 50%;
 }
 
 #catflower1 {
     left: 0;
+    height: 50%;
 }
 
 /* Galeria zdjęć */
@@ -114,8 +116,9 @@ body {
 
 /* Główna strona wyboru jedzenia */
 .main_jedzenie {
+    margin-top: 100%;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
