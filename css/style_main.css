@@ -85,7 +85,9 @@ body {
 
 #catflower {
     right: 0;
-    height: 100px;
+    max-width: 30%;
+      height: auto;
+      display: block;
 }
 
 #catflower1 {
