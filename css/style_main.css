@@ -85,16 +85,12 @@ body {
 
 #catflower {
     right: 0;
-    max-width: 30%;
-      height: auto;
-      display: block;
+    height: 50%;
 }
 
 #catflower1 {
     left: 0;
-    max-width: 30%;
-      height: auto;
-      display: block;
+    height: 50%;
 }
 
 /* Galeria zdjęć */
