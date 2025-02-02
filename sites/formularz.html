@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz propozycji</title>
+    <style>
+
+        body {
+            font-family: 'Edu AU VIC WA NT Pre', cursive;
+            background: linear-gradient(135deg, #620399, #f366c4);
+            background-size: 400% 400%;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: white;
+            color: #620399;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: 2px solid #620399;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #620399;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #f366c4;
+        }
+
+        .back {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Twój pomysł na spotkanie</h1>
+    <form id="propozycjaForm">
+        <label for="place">Pomysł na spotaknie:</label>
+        <textarea id="place" name="place" rows="3" placeholder="Wpisz swój pomysł..." required></textarea>
+
+        <button type="submit">Wyślij</button>
+    </form>
+
+    <script>
+        document.getElementById('propozycjaForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Zatrzymanie standardowego działania formularza
+
+
+            const selectedDate = localStorage.getItem('selectedDate');
+            const place = document.getElementById('place').value;
+
+            
+            
+            if (selectedDate && place) {
+                        const webhookUrl = 'https://discord.com/api/webhooks/1329457507457961984/3Bzz0SF9P5BAok3OF9QhWt3qDjR4-6-q-9KTX-gkHLo_qfZYsVEUciNwsFvsPVm9nONB';
+                        fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                content: `Ola zdecydowała:\nData: ${selectedDate}\nMiejsce spotkania: ${place}\n<@455350190841266206>`
+                            })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                console.log('Wiadomość została wysłana.');
+                                setTimeout(function() {
+                                    window.location.href = 'koncowka.html'; 
+                                }, 2000);
+                            } else {
+                                console.error('Błąd przy wysyłaniu wiadomości.');
+                            }
+                        })
+                        .catch(error => console.error('Błąd:', error));
+                    } else {
+                        console.log('Brak wybranej daty lub jedzenia.');
+                    }
+                });
+    </script>
+</body>
+</html>

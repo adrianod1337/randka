@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
 
 * {
     margin: 0;
@@ -109,7 +108,7 @@ body {
     object-fit: cover;
 }
 
-.maczek, .spacer, .kino, .kregle, .zegar {
+.maczek, .spacer, .kino, .kregle, .zegar, .propozycja{
     padding: 1rem;
     border: 2px solid rgb(255, 255, 255);
 }
