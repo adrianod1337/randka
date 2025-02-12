@@ -7,7 +7,12 @@ $("button").click(function() {
     }, 2500);
 
 });
-
+$(document).ready(function() {
+    $(".button_pierwszy").click(function() {
+        $(".title").text("Tego to się nie spodziewałem ");
+        $(this).text("Już nie mogę się doczekać!");
+    });
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {
