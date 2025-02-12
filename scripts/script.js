@@ -9,8 +9,8 @@ $("button").click(function() {
 });
 $(document).ready(function() {
     $(".button_pierwszy").click(function() {
-        $(".title").text("Tego to się nie spodziewałem ");
-        $(this).text("Już nie mogę się doczekać!");
+        $(".title").text("Tego to się nie spodziewałem");
+        $(this).text("Na serio?");
     });
 });
 
